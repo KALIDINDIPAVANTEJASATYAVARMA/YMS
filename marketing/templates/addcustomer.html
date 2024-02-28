@@ -1,0 +1,51 @@
+{% extends 'mrktbase.html' %}
+{% load widget_tweaks %}
+{% block content %}
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style>
+       <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  a:link {
+        text-decoration: none;
+      }
+    
+  </style>
+</head>
+<h2 style="text-align:center; ">Add CUSTOMER</h2>
+<form method="POST" autocomplete="off" style="margin:100px;margin-top: 0px;">
+    {%csrf_token%}
+    <div class="form-group">
+      <label for="customer_no">CUSTOMER NO</label>
+      {% render_field customerform.customer_no class="form-control form-control-sm rounded-0" placeholder="Example: 000000" %}
+
+      <label for="customer_name">CUSTOMER NAME</label>
+      {% render_field customerform.customer_name class="form-control form-control-sm rounded-0" placeholder="Example: pavan" %}
+
+      <label for="customer_address">ADDRESS</label>
+      {% render_field customerform.customer_address class="form-control form-control-sm rounded-0" placeholder="Example: ukkunagaram" %}
+
+      <label for="city">CITY</label>
+      {% render_field customerform.city class="form-control rounded-0" placeholder="Example: visakhapatnam" %}
+
+      <label for="pin">PIN</label>
+      {% render_field customerform.pin class="form-control rounded-0" placeholder="Example: 530032" %}
+
+      <label for="phone_no">PHONE NO</label>
+      {% render_field customerform.phone_no class="form-control rounded-0" placeholder="Example: 9999999999" %}
+      
+      <label for="email_id">EMAIL ID</label>
+      {% render_field customerform.email_id class="form-control rounded-0" placeholder="Example: abc@gmail.com" %}
+
+    </div>
+    
+
+    <button type="submit" class="btn btn-primary btn-lg rounded-0" style="border-radius: 0%;">Submit Info</button>
+  </form>
+<br><br><br>
+{% endblock content %}

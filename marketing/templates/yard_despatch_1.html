@@ -1,0 +1,62 @@
+{% extends 'mrktbase.html' %}
+{% block content %}
+{%load static%}
+
+<head>
+  <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+  <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+
+  <style media="screen">
+    a:link {
+      text-decoration: none;
+    }
+
+    h6 {
+      text-align: center;
+    }
+
+    .row {
+      margin: 100px;
+    }
+  </style>
+</head>
+<br><br>
+<div class="container">
+  <div class="panel panel-primary rounded-0">
+    <div class="panel-heading rounded-0">
+      <h6 class="panel-title"> YARD DESPATCH RECEIPT </h6>
+    </div>
+    <table class="table table-hover table-bordered" id="dev-table">
+      <thead>
+        <tr>
+
+          <th>YARD NO</th>
+          <th>DESPATCH ID</th>
+          <th>TRANSPORT TYPE</th>
+          <th>SALE ORDER ID</th>
+          <th>DESPATCH DATE</th>
+          <th>DESPATCHED QNTY</th>
+          <th>REMARKS</th>
+          
+        </tr>
+      </thead>
+      {% for t in data %}
+      <tr>
+
+        <td> {{t.yard_no}}</td>
+        <td>{{t.despatch_id}}</td>
+        <td>{{t.transport_type}}</td>
+        <td>{{t.sale_order_id}}</td>
+        <td>{{t.despatch_date}}</td>
+        <td>{{t.despatched_qty}}</td>
+        <td>{{t.remarks}}</td> 
+
+      </tr>
+      {% endfor %}
+    </table>
+  </div>
+</div>
+
+<br><br><br><br><br><br>
+{% endblock content %}

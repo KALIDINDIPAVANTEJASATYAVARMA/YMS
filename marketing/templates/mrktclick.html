@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <style media="screen">
+    .jumbotron {
+      margin-top: 0px;
+      margin-bottom: 0px;
+    }
+
+    .jumbotron h1 {
+      text-align: center;
+    }
+    body{
+    background-image:
+  url('static/home.jpg');
+    background-repeat:no-repeat;
+     background-attachment:fixed;
+    background-size:cover;
+  }
+  .content{
+    position: relative;
+    z-index: 1;
+  }
+
+  </style>
+
+</head>
+
+<body>
+
+  {% include "navbar.html" %}
+  <br><br>
+  <div class="jumbotron" style="margin-bottom:0px;">
+    <h1 class="display-4">Hello MARKETING USER,</h1>
+    <p class="lead">and Welcome to YARD MANAGEMENT SYSTEM</p>
+    <hr class="my-4">
+    <p>Select any of them to access into the system</p>
+    <p class="lead">
+      <a class="btn btn-secondary rounded-0" href="mrktsignup" role="button">Create Your Account</a>
+      <a class="btn btn-primary rounded-0" href="mrktlogin" role="button">Login Now</a>
+    </p>
+    <br><br><br><br><br><br>
+  </div>
+ 
+  {% include "footer.html" %}
+</body>
+
+</html>

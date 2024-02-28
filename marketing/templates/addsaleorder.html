@@ -1,0 +1,49 @@
+{% extends 'mrktbase.html' %}
+{% load widget_tweaks %}
+{% block content %}
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style>
+       <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  a:link {
+        text-decoration: none;
+      }
+    
+  </style>
+</head>
+<h2 style="text-align:center; ">GENERATE SALEORDER</h2>
+<form method="POST" autocomplete="off" style="margin:100px;margin-top: 0px;">
+    {%csrf_token%}
+    <div class="form-group">
+      <label for="sale_order_id">SALE ORDER ID </label>
+      {% render_field saleorder.sale_order_id class="form-control form-control-sm rounded-0" placeholder="Example: 000000" %}
+
+      <label for="customer_id">CUSTOMER ID</label>
+      {% render_field saleorder.customer_id class="form-control form-control-sm rounded-0" placeholder="Example: 111111" %}
+
+      <label for="product_id">PRODUCT ID</label>
+      {% render_field saleorder.product_id class="form-control form-control-sm rounded-0" placeholder="Example: 000000" %}
+
+      <label for="sale_order_date">SALE ORDER DATE</label>
+      {% render_field saleorder.sale_order_date class="form-control rounded-0" placeholder="Example: 19-06-2023" %}
+
+      <label for="sale_order_qty">SALE ORDER QTY</label>
+      {% render_field saleorder.sale_order_qty class="form-control rounded-0" placeholder="Example: 1000" %}
+
+      <label for="remarks">REMARKS</label>
+      {% render_field saleorder.remarks class="form-control rounded-0" placeholder="Example: good" %}
+      
+      
+    </div>
+    
+
+    <button type="submit" class="btn btn-primary btn-lg rounded-0" style="border-radius: 0%;">Submit Info</button>
+  </form>
+<br><br><br>
+{% endblock content %}
